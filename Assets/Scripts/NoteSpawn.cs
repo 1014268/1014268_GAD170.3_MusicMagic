@@ -14,6 +14,7 @@ public class NoteSpawn : MonoBehaviour
     {
         spawnWhere = Random.Range(0, 22);
         noteClone[0] = Instantiate(notePrefab[0], spawnPoints[spawnWhere].transform.position, Quaternion.Euler(0,0,0)) as GameObject;
+        noteClone[0].GetComponent<NoteLogic>().setSpawnWhere(spawnWhere);
     }
 
     IEnumerator spawnRate()
