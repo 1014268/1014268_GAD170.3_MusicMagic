@@ -4,35 +4,80 @@ using UnityEngine;
 
 public class KeyLogic : MonoBehaviour
 {
+    public string keyName;
+    public string target;
+    Color c_pressed;
+    Color lerpedColor;
+    public Color[] randomColor;
     private SpriteRenderer spriteRenderer;
-    public Color c_pressed;
-    public Color c_unpressed;
-    public bool pressed;
+    int colorRoll;
+    float fadeAmount = 0f;
+    float fadeSpeed = 0.05f;
+    GameLogic gameLogic;
     
+    //This should change the key colours
+    void ColorChange()
+    {
+        StopCoroutine("FadeToWhite");
+        colorRoll = Random.Range(0, 6);
+        spriteRenderer.color = randomColor[colorRoll];
+    }
 
+    //This should trigger the Coroutine
+    public void Fade()
+    {
+        StartCoroutine("FadeToWhite");
+    }
+
+    //This should fade the key back to white
+    IEnumerator FadeToWhite()
+    {
+        for (float i = 1f; i >= fadeAmount; i += 0.05f)
+        {
+            Color c = spriteRenderer.material.color;  
+            c.r = i;
+            c.g = i;
+            c.b = i;
+
+            spriteRenderer.material.color = c;
+            yield return new WaitForSeconds(fadeSpeed);
+        }
+    }
+
+    void targetCheck()
+    {
+        target = gameLogic.targetNote;
+        if(target == keyName)
+        {
+            gameLogic.correct = true;
+        }
+        else
+        {
+            gameLogic.correct = false;
+        }
+    }
+
+    //This should trigger functions when key is clicked
+    private void OnMouseDown()
+    {
+        ColorChange();
+        targetCheck();
+    }
+
+    //This should trigger functions after key click has resolved
+    private void OnMouseUp()
+    {
+        Fade();
+    }
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        gameLogic = GameObject.Find("DoubleStaff").GetComponent<GameLogic>();
     }
-    
 
-    private void OnMouseOver()
+    private void Update()
     {
-        if(Input.GetMouseButton(0))
-        {
-            spriteRenderer.color = c_pressed;
-            pressed = true;
-        }
-        else
-        {
-            pressed = false;
-            spriteRenderer.color = c_unpressed;
-        }
-    }
-    private void OnMouseExit()
-    {
-        spriteRenderer.color = c_unpressed;
-        pressed = false;
+        
     }
 }
