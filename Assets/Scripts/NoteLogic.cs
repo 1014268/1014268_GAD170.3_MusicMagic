@@ -9,10 +9,13 @@ public class NoteLogic : MonoBehaviour
     private Rigidbody2D rigidBody;
     SpriteRenderer spriteRenderer;
     GameLogic gameLogic;
+    CapsuleCollider2D noteCollider;
+    Vector2 lastVelocity;
     public int spawnWhere = -1;
     public float notePosition;
     public bool firstNote;
     public string myName;
+    public bool active;
 
     public bool spawnIsSet = false;
 
@@ -158,16 +161,18 @@ public class NoteLogic : MonoBehaviour
     //This checks which note is closest to the action bar
     void firstNoteCheck()
     {
-        notePosition = this.transform.localPosition.x;
-
-        if (notePosition < gameLogic.firstPosition)
+        if(active)
         {
-            firstNote = true;
-            gameLogic.targetNote = myName;
-        }
-        else
-        {
-            firstNote = false;
+            notePosition = this.transform.localPosition.x;
+            if (notePosition < gameLogic.firstPosition)
+            {
+                firstNote = true;
+                gameLogic.targetNote = myName;
+            }
+            else
+            {
+                firstNote = false;
+            }
         }
     }
 
@@ -186,17 +191,20 @@ public class NoteLogic : MonoBehaviour
 
     void clickCheck()
     {
-        if (gameLogic.correct == true)
+        if (firstNote == true)
         {
-            Destroy(this.gameObject);
-            gameLogic.correct = false;
-            gameLogic.firstPosition = 10;
+            if (gameLogic.correct == true)
+            {
+                Destroy(this.gameObject);
+                gameLogic.correct = false;
+                gameLogic.firstPosition = 10;
+                gameLogic.launch = false;
+            }
+            else
+            {
+                launchCheck();
+            }
         }
-        else
-        {
-            gameLogic.correct = false;
-        }
-        
     }
 
     //This should destroy notes that were missed
@@ -204,18 +212,60 @@ public class NoteLogic : MonoBehaviour
     {
         if(notePosition <= -6)
         {
-            Debug.Log(myName + " was missed!");
-            Destroy(this.gameObject);
+            noteCollider.isTrigger = false;
+            rigidBody.AddForce(Vector2.left * 10);
+            rigidBody.gravityScale = 1;
+            rigidBody.AddTorque(1);
             gameLogic.firstPosition = 10;
+            firstNote = false;
+            active = false;
         }
     }
 
+    void launchCheck()
+    {
+        if(firstNote == true)
+        {
+            if(gameLogic.launch == true)
+            {
+                noteCollider.isTrigger = false;
+                rigidBody.AddForce(Vector2.up * 1000);
+                rigidBody.AddForce(Vector2.right * 1500);
+                rigidBody.gravityScale = 1;
+                rigidBody.AddTorque(-10);
+                gameLogic.firstPosition = 10;
+                gameLogic.correct = false;
+                gameLogic.launch = false;
+                firstNote = false;
+                active = false;
+            }
+        }
+    }
+        
+    void OnCollisionEnter2D(Collision2D noteCollide)
+    {
+        if (noteCollide.gameObject.name == "OutOfBounds")
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            rigidBody.velocity = Vector2.Reflect(lastVelocity, noteCollide.contacts[0].normal);
+        }
+    }
 
     void Start()
     {
         gameLogic = GameObject.Find("DoubleStaff").GetComponent<GameLogic>();
+        noteCollider = GetComponent<CapsuleCollider2D>();
         noteRotate();
         nameCheck();
+        active = true;
+    }
+
+    private void FixedUpdate()
+    {
+        lastVelocity = rigidBody.velocity;
     }
 
     void Update()

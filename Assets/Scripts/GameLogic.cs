@@ -9,11 +9,13 @@ public class GameLogic : MonoBehaviour
     public string targetNote;
     public string targetKey;
     public bool correct;
+    public bool launch;
 
     void Start()
     {
         firstPosition = 10;
         correct = false;
+        launch = false;
     }
 
     void Update()

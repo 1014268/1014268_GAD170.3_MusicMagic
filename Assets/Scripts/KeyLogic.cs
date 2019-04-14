@@ -50,10 +50,13 @@ public class KeyLogic : MonoBehaviour
         if(target == keyName)
         {
             gameLogic.correct = true;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Correct/MusicMagic_" + keyName);
         }
         else
         {
             gameLogic.correct = false;
+            gameLogic.launch = true;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Wrong/MusicMagic_" + keyName);
         }
     }
 
