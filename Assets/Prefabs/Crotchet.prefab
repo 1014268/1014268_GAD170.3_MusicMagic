@@ -121,8 +121,8 @@ MonoBehaviour:
   notePosition: 0
   firstNote: 0
   myName: 
+  active: 0
   spawnIsSet: 0
-  alive: 1
 --- !u!70 &2700392646936319
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

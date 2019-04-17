@@ -5,17 +5,19 @@ using UnityEngine;
 public class NoteLogic : MonoBehaviour
 {
     public NoteSpawn noteSpawn;
-    public float speed = 10.0f;
+    public float speed = 2;
     private Rigidbody2D rigidBody;
     SpriteRenderer spriteRenderer;
     GameLogic gameLogic;
     CapsuleCollider2D noteCollider;
     Vector2 lastVelocity;
+    GameObject actionBar;
     public int spawnWhere = -1;
     public float notePosition;
     public bool firstNote;
     public string myName;
     public bool active;
+    public float noteValue;
 
     public bool spawnIsSet = false;
 
@@ -30,6 +32,7 @@ public class NoteLogic : MonoBehaviour
     {
         rigidBody = this.GetComponent<Rigidbody2D>();
         rigidBody.velocity = new Vector2(-speed, 0);
+        Debug.Log(rigidBody.velocity);
         noteSpawn = gameObject.GetComponent<NoteSpawn>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -195,6 +198,7 @@ public class NoteLogic : MonoBehaviour
         {
             if (gameLogic.correct == true)
             {
+                gameLogic.addScore = noteValue;
                 Destroy(this.gameObject);
                 gameLogic.correct = false;
                 gameLogic.firstPosition = 10;
@@ -254,13 +258,20 @@ public class NoteLogic : MonoBehaviour
         }
     }
 
+    void valueCalculation()
+    {
+        noteValue = (12-(Vector2.Distance(transform.localPosition, actionBar.transform.localPosition)))*1000;
+    }
+
     void Start()
     {
         gameLogic = GameObject.Find("DoubleStaff").GetComponent<GameLogic>();
+        actionBar = GameObject.Find("ActionBar");
         noteCollider = GetComponent<CapsuleCollider2D>();
         noteRotate();
         nameCheck();
         active = true;
+        speed = 10f;
     }
 
     private void FixedUpdate()
@@ -274,5 +285,6 @@ public class NoteLogic : MonoBehaviour
         positionReport();
         clickCheck();
         missed();
+        valueCalculation();
     }
 }

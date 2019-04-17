@@ -14,6 +14,7 @@ public class KeyLogic : MonoBehaviour
     float fadeAmount = 0f;
     float fadeSpeed = 0.05f;
     GameLogic gameLogic;
+    GameObject actionBar;
     
     //This should change the key colours
     void ColorChange()
