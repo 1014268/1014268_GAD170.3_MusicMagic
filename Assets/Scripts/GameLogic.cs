@@ -13,22 +13,32 @@ public class GameLogic : MonoBehaviour
     public bool launch;
     public float addScore;
     public float score;
+    public int progress;
     public Text currentScore;
-    public TextLogic textLogic;
+    public TextSpawn textSpawn;
+    public Text currentProgress;
+    
     
     void scoreUpdate()
     {
-        if(addScore>0)
+        if(addScore > 0)
         {
             score += addScore;
             currentScore.text = ((int)score).ToString();
             addScore = 0;
-            textLogic.textSpawn = true;
+            textSpawn.spawn = true;
         }
-        else
+        else if(addScore < 0)
         {
-
+            score += addScore;
+            currentScore.text = ((int)score).ToString();
+            addScore = 0;
         }
+    }
+
+    void progressUpdate()
+    {
+        currentProgress.text = progress.ToString() + "/20";
     }
     
     void Start()
@@ -36,13 +46,17 @@ public class GameLogic : MonoBehaviour
         firstPosition = 10;
         score = 0;
         currentScore = GameObject.Find("CurrentScore").GetComponent<Text>();
+        currentProgress = GameObject.Find("CurrentProgress").GetComponent<Text>();
+        textSpawn = GameObject.Find("TextSpawnPoints").GetComponent<TextSpawn>();
         correct = false;
         launch = false;
+        progress = 0;
     }
 
     void Update()
     {
         targetKey = targetNote;
         scoreUpdate();
+        progressUpdate();
     }
 }

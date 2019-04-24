@@ -4,40 +4,38 @@ using UnityEngine;
 
 public class TextLogic : MonoBehaviour
 {
-    GameLogic gameLogic;
-    public GameObject[] textPrefab;
-    public GameObject[] textClone;
-    public Transform[] spawnPoints;
+    private Rigidbody2D rigidBody;
+    Vector2 lastVelocity;
+    float range = 200;
 
-    public bool textSpawn;
-    public int whichText;
-    public int spawnWhere;
-
-    void spawnText()
+    void OnCollisionEnter2D(Collision2D textCollide)
     {
-        if (textSpawn)
+        if (textCollide.gameObject.name == "OutOfBounds_Up")
         {
-            spawnWhere = Random.Range(0, 10);
-            textClone[whichText] = Instantiate(textPrefab[0], spawnPoints[spawnWhere].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
-            textClone[0].GetComponent<NoteLogic>().setSpawnWhere(spawnWhere);
-            textSpawn = false;
+            Destroy(this.gameObject);
         }
         else
         {
-
+            rigidBody.velocity = Vector2.Reflect(lastVelocity, textCollide.contacts[0].normal);
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+        // Start is called before the first frame update
+        void Start()
     {
-        gameLogic = GameObject.Find("DoubleStaff").GetComponent<GameLogic>();
-        textSpawn = false;
+        rigidBody = GetComponent<Rigidbody2D>();
+        rigidBody.AddTorque(Random.Range(-range,range));
+        rigidBody.AddForce(Vector2.right * (Random.Range(-range, range)));
     }
 
     // Update is called once per frame
     void Update()
     {
-        spawnText();
+        
+    }
+
+    private void FixedUpdate()
+    {
+        lastVelocity = rigidBody.velocity;
     }
 }

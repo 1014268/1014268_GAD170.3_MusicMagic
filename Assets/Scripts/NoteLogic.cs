@@ -200,6 +200,7 @@ public class NoteLogic : MonoBehaviour
             {
                 gameLogic.addScore = noteValue;
                 Destroy(this.gameObject);
+                gameLogic.progress += 1;
                 gameLogic.correct = false;
                 gameLogic.firstPosition = 10;
                 gameLogic.launch = false;
@@ -221,6 +222,7 @@ public class NoteLogic : MonoBehaviour
             rigidBody.gravityScale = 1;
             rigidBody.AddTorque(1);
             gameLogic.firstPosition = 10;
+            gameLogic.addScore = -250;
             firstNote = false;
             active = false;
         }
@@ -238,6 +240,7 @@ public class NoteLogic : MonoBehaviour
                 rigidBody.gravityScale = 1;
                 rigidBody.AddTorque(-10);
                 gameLogic.firstPosition = 10;
+                gameLogic.addScore = -500;
                 gameLogic.correct = false;
                 gameLogic.launch = false;
                 firstNote = false;
@@ -252,7 +255,7 @@ public class NoteLogic : MonoBehaviour
         
     void OnCollisionEnter2D(Collision2D noteCollide)
     {
-        if (noteCollide.gameObject.name == "OutOfBounds")
+        if (noteCollide.gameObject.name == "OutOfBounds_Down")
         {
             Destroy(this.gameObject);
         }
