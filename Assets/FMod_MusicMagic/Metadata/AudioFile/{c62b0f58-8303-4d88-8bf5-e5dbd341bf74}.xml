@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{c62b0f58-8303-4d88-8bf5-e5dbd341bf74}">
+        <property name="assetPath">
+            <value>MusicMagic_F5.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>2</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a39fd380-f273-42c5-af5d-bc1370302aab}</destination>
+        </relationship>
+    </object>
+</objects>

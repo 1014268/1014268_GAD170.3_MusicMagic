@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{4093f33d-ccf0-4b5d-b3f3-ece09257b538}">
+        <property name="assetPath">
+            <value>MusicMagic_G2.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>2</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a39fd380-f273-42c5-af5d-bc1370302aab}</destination>
+        </relationship>
+    </object>
+</objects>

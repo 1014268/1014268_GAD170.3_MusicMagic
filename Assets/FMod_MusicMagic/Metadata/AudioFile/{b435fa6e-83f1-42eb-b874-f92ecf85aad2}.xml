@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{b435fa6e-83f1-42eb-b874-f92ecf85aad2}">
+        <property name="assetPath">
+            <value>EftPP_Battle.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>118.15385487528344</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a39fd380-f273-42c5-af5d-bc1370302aab}</destination>
+        </relationship>
+    </object>
+</objects>
