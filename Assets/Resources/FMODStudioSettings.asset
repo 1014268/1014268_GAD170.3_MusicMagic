@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: E:\Documents\FMOD Studio\Music Magic\Music Magic.fspro
-  SourceProjectPathUnformatted: E:\Documents\FMOD Studio\Music Magic\Music Magic.fspro
-  SourceBankPathUnformatted: E:\Documents\FMOD Studio\Music Magic\Build
+  sourceProjectPath: Assets\FMod_MusicMagic\Music Magic.fspro
+  SourceProjectPathUnformatted: Assets\FMod_MusicMagic\Music Magic.fspro
+  SourceBankPathUnformatted: Assets\FMod_MusicMagic\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0

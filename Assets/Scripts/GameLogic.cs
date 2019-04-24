@@ -13,20 +13,24 @@ public class GameLogic : MonoBehaviour
     public bool launch;
     public float addScore;
     public float score;
-    public UI;
-
+    public Text currentScore;
+    public TextLogic textLogic;
+    
     void scoreUpdate()
     {
         if(addScore>0)
         {
-            score = +addScore;
-            currentScore.text = score.ToString();
+            score += addScore;
+            currentScore.text = ((int)score).ToString();
+            addScore = 0;
+            textLogic.textSpawn = true;
         }
         else
         {
 
         }
     }
+    
     void Start()
     {
         firstPosition = 10;

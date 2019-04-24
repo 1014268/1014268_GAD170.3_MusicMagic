@@ -244,6 +244,10 @@ public class NoteLogic : MonoBehaviour
                 active = false;
             }
         }
+        else
+        {
+            
+        }
     }
         
     void OnCollisionEnter2D(Collision2D noteCollide)
@@ -260,7 +264,7 @@ public class NoteLogic : MonoBehaviour
 
     void valueCalculation()
     {
-        noteValue = (12-(Vector2.Distance(transform.localPosition, actionBar.transform.localPosition)))*1000;
+        noteValue = (12-(Vector2.Distance(transform.localPosition, actionBar.transform.localPosition)))*100;
     }
 
     void Start()
@@ -271,6 +275,7 @@ public class NoteLogic : MonoBehaviour
         noteRotate();
         nameCheck();
         active = true;
+        gameLogic.launch = false;
         speed = 10f;
     }
 

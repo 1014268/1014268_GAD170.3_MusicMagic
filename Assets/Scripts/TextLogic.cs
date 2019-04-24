@@ -15,20 +15,29 @@ public class TextLogic : MonoBehaviour
 
     void spawnText()
     {
-        spawnWhere = Random.Range(0, 10);
-        textClone[whichText] = Instantiate(textPrefab[0], spawnPoints[spawnWhere].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
-        textClone[0].GetComponent<NoteLogic>().setSpawnWhere(spawnWhere);
+        if (textSpawn)
+        {
+            spawnWhere = Random.Range(0, 10);
+            textClone[whichText] = Instantiate(textPrefab[0], spawnPoints[spawnWhere].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+            textClone[0].GetComponent<NoteLogic>().setSpawnWhere(spawnWhere);
+            textSpawn = false;
+        }
+        else
+        {
+
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
         gameLogic = GameObject.Find("DoubleStaff").GetComponent<GameLogic>();
+        textSpawn = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        spawnText();
     }
 }
