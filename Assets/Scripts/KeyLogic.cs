@@ -15,6 +15,8 @@ public class KeyLogic : MonoBehaviour
     float fadeSpeed = 0.05f;
     GameLogic gameLogic;
     GameObject actionBar;
+    TextSpawn textSpawn;
+    NoteLogic noteLogic;
     
     //This should change the key colours
     void ColorChange()
@@ -52,6 +54,7 @@ public class KeyLogic : MonoBehaviour
         {
             gameLogic.correct = true;
             FMODUnity.RuntimeManager.PlayOneShot("event:/Correct/MusicMagic_" + keyName);
+            
         }
         else
         {
@@ -78,6 +81,7 @@ public class KeyLogic : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         gameLogic = GameObject.Find("DoubleStaff").GetComponent<GameLogic>();
+        textSpawn = GameObject.Find("TextSpawnPoints").GetComponent<TextSpawn>();
     }
 
     private void Update()

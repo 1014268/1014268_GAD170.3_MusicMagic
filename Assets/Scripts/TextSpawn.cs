@@ -5,12 +5,13 @@ using UnityEngine;
 public class TextSpawn : MonoBehaviour
 {
     GameLogic gameLogic;
+    NoteLogic noteLogic;
     public GameObject[] textPrefab;
     public GameObject[] textClone;
     public Transform[] spawnPoints;
 
     public bool spawn;
-    public int whichText;
+    public float whichText;
     public int spawnWhere;
     int addTextValue;
 
@@ -18,11 +19,32 @@ public class TextSpawn : MonoBehaviour
     {
         if (spawn == true)
         {
-            //TextChoice();
             spawnWhere = Random.Range(0, 10);
-            textClone[0] = Instantiate(textPrefab[1], spawnPoints[spawnWhere].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
-            //textClone[0].GetComponent<NoteLogic>().setSpawnWhere(spawnWhere);
-            spawn = false;
+            if (whichText>0)
+            {
+                textClone[0] = Instantiate(textPrefab[0], spawnPoints[spawnWhere].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+                spawn = false;
+            }
+            else if (whichText>-3 && whichText<=0)
+            {
+                textClone[0] = Instantiate(textPrefab[1], spawnPoints[spawnWhere].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+                spawn = false;
+            }
+            else if (whichText >= -4.5 && whichText <= -3)
+            {
+                textClone[0] = Instantiate(textPrefab[2], spawnPoints[spawnWhere].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+                spawn = false;
+            }
+            else if (whichText >= -5.5 && whichText <= -4.5)
+            {
+                textClone[0] = Instantiate(textPrefab[3], spawnPoints[spawnWhere].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+                spawn = false;
+            }
+            else if (whichText <= -5.5)
+            {
+                textClone[0] = Instantiate(textPrefab[2], spawnPoints[spawnWhere].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+                spawn = false;
+            }
         }
         else
         {
@@ -30,34 +52,14 @@ public class TextSpawn : MonoBehaviour
         }
     }
 
-    /*
-    void TextChoice()
-    {
-        addTextValue = (int)gameLogic.addScore;
-        if(addTextValue > 2 && addTextValue < 6)
-        {
-            whichText = 0;
-        }
-        else if(addTextValue > 5 && addTextValue < 8)
-        {
-            whichText = 1;
-        }
-        else if(addTextValue > 7 && addTextValue < 12)
-        {
-            whichText = 2;
-        }
-        else if(addTextValue == 12)
-        {
-            whichText = 3;
-        }
-    }
-    */
+    
 
     // Start is called before the first frame update
     void Start()
     {
         gameLogic = GameObject.Find("DoubleStaff").GetComponent<GameLogic>();
         spawn = false;
+        whichText = 0;
     }
 
     // Update is called once per frame

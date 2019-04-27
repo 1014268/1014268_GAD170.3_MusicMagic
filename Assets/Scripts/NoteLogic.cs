@@ -9,6 +9,7 @@ public class NoteLogic : MonoBehaviour
     private Rigidbody2D rigidBody;
     SpriteRenderer spriteRenderer;
     GameLogic gameLogic;
+    TextSpawn textSpawn;
     CapsuleCollider2D noteCollider;
     Vector2 lastVelocity;
     GameObject actionBar;
@@ -201,6 +202,7 @@ public class NoteLogic : MonoBehaviour
                 gameLogic.addScore = noteValue;
                 Destroy(this.gameObject);
                 gameLogic.progress += 1;
+                textSpawn.whichText = notePosition;
                 gameLogic.correct = false;
                 gameLogic.firstPosition = 10;
                 gameLogic.launch = false;
@@ -222,7 +224,8 @@ public class NoteLogic : MonoBehaviour
             rigidBody.gravityScale = 1;
             rigidBody.AddTorque(1);
             gameLogic.firstPosition = 10;
-            gameLogic.addScore = -250;
+            //Change this so it only happens ONCE! Not every update!
+            //gameLogic.addScore = -250;
             firstNote = false;
             active = false;
         }
@@ -274,6 +277,7 @@ public class NoteLogic : MonoBehaviour
     {
         gameLogic = GameObject.Find("DoubleStaff").GetComponent<GameLogic>();
         actionBar = GameObject.Find("ActionBar");
+        textSpawn = GameObject.Find("TextSpawnPoints").GetComponent<TextSpawn>();
         noteCollider = GetComponent<CapsuleCollider2D>();
         noteRotate();
         nameCheck();

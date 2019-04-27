@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114615532370185484}
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   EditorEvents:
   - {fileID: 114489829430223704}
   - {fileID: 114928868486101702}
@@ -63,10 +63,10 @@ MonoBehaviour:
   - {fileID: 114800664615524762}
   - {fileID: 114724086502057066}
   MasterBanks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   StringsBanks:
   - {fileID: 114615532370185484}
-  stringsBankWriteTime: 636916954681898090
+  stringsBankWriteTime: 636917725783722365
   cacheVersion: 3
 --- !u!114 &114017633074844456
 MonoBehaviour:
@@ -175,7 +175,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_F5
   guid: fa0db128ffed6a4abc3639fe2af55845
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -267,7 +267,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_D4
   guid: d732f671fdbd3342ad7fc9c7f102e506
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -333,7 +333,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_F3
   guid: 7a440e701dacba4ca185569bde7fea28
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -356,7 +356,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_F4
   guid: 86f0ea68cf23b4409ed4b94ab38df1b6
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -425,7 +425,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_F4
   guid: 9f1ab1b2b28ac94383cef200c68c7396
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -490,7 +490,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_B3
   guid: 18f7092f3cb8cc41bb623d0d141e33fc
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -532,7 +532,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_G2
   guid: 1312d4faf35c934a930bd0076e774632
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -555,7 +555,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_A2
   guid: 8357b57856d2b34ea2da03a6e6e0109a
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -601,7 +601,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_C5
   guid: 672ed849dc548e4aa5986cb50acfd999
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -624,7 +624,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_G5
   guid: 989d890b8f932d44ae81cfad5a79c544
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -647,7 +647,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_C3
   guid: 54784320c2c44f4db1537f941e8ee741
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -670,7 +670,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_A3
   guid: 47585f35a5df1a4a8a64740dc0c4148c
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -678,6 +678,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &114233115326716820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: E:\Documents\GitHub\1014268_GAD170.3_MusicMagic\1014268_GAD170.3_MusicMagic\Assets\FMod_MusicMagic\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636917725783682471
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 410560
+  Exists: 1
 --- !u!114 &114234486013043198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,7 +713,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_E3
   guid: 1a9807d8701cbe4bbc21e7ec6ebda2eb
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -739,7 +759,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_G3
   guid: 8176839fb34631429df91727b488cdb3
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -854,7 +874,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_C4
   guid: 13c188bb9b151d47abddf30b9a732b41
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -900,7 +920,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_F2
   guid: 24211ecd2650d8439ddaf60cfe1dc2ec
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -923,7 +943,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_G4
   guid: b6b3d544e0caa24ca2220913f7319df4
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -969,7 +989,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_E4
   guid: 1f7e2c4e1f48964ea985aeee145a2abb
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1130,7 +1150,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_G3
   guid: 8c7a9c39ccbeac44991299abe55d7fcb
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1268,7 +1288,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_E4
   guid: c7aed40109e7354ba9dbd433ec5965f6
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1314,7 +1334,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_D5
   guid: e9d40e2c57dd5441b964ce6d62f1f32f
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1337,7 +1357,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_C3
   guid: 0b7a2d5a5a044e4b89876251b8f7751d
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1383,7 +1403,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_C4
   guid: 03e5155837b1584a8fc7ab408e25cf21
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1429,7 +1449,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_F2
   guid: 7239696316dd4e4cbb7293a7dd8fc677
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1495,7 +1515,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_B4
   guid: 4cecc1846af7b846a1cbd015d4a565b4
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1564,7 +1584,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_A4
   guid: a56455a972f88047911106929ffef791
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1656,7 +1676,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_A4
   guid: 8de0ae7f2a99e3408bc90b1f070066d4
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1748,7 +1768,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_B2
   guid: 995d6bcc4b933740a197d66553fe7e1d
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1771,7 +1791,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_G2
   guid: e63ba9d264ca554bbf158996e3e0d488
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1815,7 +1835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMod_MusicMagic\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636916954681898090
+  lastModified: 636917725783722365
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1882,7 +1902,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_B2
   guid: a81ca1046d8f2742b9c62715219be11e
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1951,7 +1971,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_A2
   guid: 505dac88e1e7cb48ae073e9fa6d947f2
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1974,7 +1994,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_F3
   guid: e59ba6ebf353594f913d2db5bb6ebeaa
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2066,7 +2086,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_E3
   guid: 8ae1e07f531d0040922b04bfa4808593
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2131,7 +2151,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_A3
   guid: c9530e8dfb88094fb2f2304faa3aad60
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2200,7 +2220,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_D3
   guid: 7308eb1c900f3344b4926780bd723e34
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2223,7 +2243,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_C5
   guid: 678958b745f6bc45a3b57205555517c3
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2246,7 +2266,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_G5
   guid: 112dae1bbc54794fa29d011c79bcd21b
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2269,7 +2289,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_E5
   guid: c43d828aaa8a4d47be40c6359710d870
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2338,7 +2358,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_G4
   guid: 6dc19779393b4e4598d555aa6c299347
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2430,7 +2450,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_D5
   guid: 9a1fba6bcb6a8d4f9a1c419318d42b10
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2498,7 +2518,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_D3
   guid: fe4800b83787914b909e33220c0c3b37
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2521,7 +2541,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_F5
   guid: b727dc88ab153841b6d3585115b4a958
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2544,7 +2564,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_B3
   guid: 9372357a6c44c74cb1e707806e332324
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2613,7 +2633,7 @@ MonoBehaviour:
   Path: event:/Correct/MusicMagic_E5
   guid: 0b6aaece1377554e81d1a1e8190f3527
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2682,7 +2702,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_B4
   guid: 6b6822894021704498afbacf7c363b6a
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2751,7 +2771,7 @@ MonoBehaviour:
   Path: event:/Wrong/MusicMagic_D4
   guid: 0bd023469644714eb3e1945c4f618d9e
   Banks:
-  - {fileID: 114523869589417758}
+  - {fileID: 114233115326716820}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
