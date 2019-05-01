@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameLogic : MonoBehaviour
     public Text currentScore;
     public TextSpawn textSpawn;
     public Text currentProgress;
+    public Text finalScore;
     
     
     void scoreUpdate()
@@ -40,6 +42,15 @@ public class GameLogic : MonoBehaviour
     {
         currentProgress.text = progress.ToString() + "/20";
     }
+
+    void endRound()
+    {
+        if(progress == 20)
+        {
+            finalScore.text = score.ToString();
+            SceneManager.LoadScene(2);
+        }
+    }
     
     void Start()
     {
@@ -48,6 +59,7 @@ public class GameLogic : MonoBehaviour
         currentScore = GameObject.Find("CurrentScore").GetComponent<Text>();
         currentProgress = GameObject.Find("CurrentProgress").GetComponent<Text>();
         textSpawn = GameObject.Find("TextSpawnPoints").GetComponent<TextSpawn>();
+        finalScore = GameObject.Find("FinalScore").GetComponent<Text>();
         correct = false;
         launch = false;
         progress = 0;
@@ -58,5 +70,6 @@ public class GameLogic : MonoBehaviour
         targetKey = targetNote;
         scoreUpdate();
         progressUpdate();
+        endRound();
     }
 }
