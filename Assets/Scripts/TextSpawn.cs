@@ -15,6 +15,7 @@ public class TextSpawn : MonoBehaviour
     public int spawnWhere;
     int addTextValue;
 
+    //This determines which text to spawn, based on a notes distance from the action bar
     void spawnText()
     {
         if (spawn == true)
@@ -46,15 +47,9 @@ public class TextSpawn : MonoBehaviour
                 spawn = false;
             }
         }
-        else
-        {
-
-        }
     }
 
-    
 
-    // Start is called before the first frame update
     void Start()
     {
         gameLogic = GameObject.Find("DoubleStaff").GetComponent<GameLogic>();
@@ -62,7 +57,6 @@ public class TextSpawn : MonoBehaviour
         whichText = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         spawnText();

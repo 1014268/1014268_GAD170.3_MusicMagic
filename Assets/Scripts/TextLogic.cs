@@ -8,6 +8,7 @@ public class TextLogic : MonoBehaviour
     Vector2 lastVelocity;
     float range = 200;
 
+    //This should destroy text once it's out of bounds
     void OnCollisionEnter2D(Collision2D textCollide)
     {
         if (textCollide.gameObject.name == "OutOfBounds_Up")
@@ -28,12 +29,7 @@ public class TextLogic : MonoBehaviour
         rigidBody.AddForce(Vector2.right * (Random.Range(-range, range)));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private void FixedUpdate()
     {
         lastVelocity = rigidBody.velocity;

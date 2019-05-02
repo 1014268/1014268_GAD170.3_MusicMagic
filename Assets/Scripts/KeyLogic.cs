@@ -47,6 +47,7 @@ public class KeyLogic : MonoBehaviour
         }
     }
 
+    //This checks if you've clicked the right key, for the right note and plays sounds accordingly
     void targetCheck()
     {
         target = gameLogic.targetNote;
@@ -82,10 +83,5 @@ public class KeyLogic : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         gameLogic = GameObject.Find("DoubleStaff").GetComponent<GameLogic>();
         textSpawn = GameObject.Find("TextSpawnPoints").GetComponent<TextSpawn>();
-    }
-
-    private void Update()
-    {
-        
     }
 }

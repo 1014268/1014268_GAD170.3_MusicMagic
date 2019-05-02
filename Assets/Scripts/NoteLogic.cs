@@ -22,7 +22,7 @@ public class NoteLogic : MonoBehaviour
 
     public bool spawnIsSet = false;
 
-
+    //This should set the spawn point for notes
     public void setSpawnWhere(int spawn)
     {
         spawnWhere = spawn;
@@ -33,7 +33,6 @@ public class NoteLogic : MonoBehaviour
     {
         rigidBody = this.GetComponent<Rigidbody2D>();
         rigidBody.velocity = new Vector2(-speed, 0);
-        Debug.Log(rigidBody.velocity);
         noteSpawn = gameObject.GetComponent<NoteSpawn>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -193,6 +192,7 @@ public class NoteLogic : MonoBehaviour
         }
     }
 
+    //This checks to see if you've clicked the right note, and acts accordingly
     void clickCheck()
     {
         if (firstNote == true)
@@ -231,6 +231,7 @@ public class NoteLogic : MonoBehaviour
         }
     }
 
+    //This should check to see if notes are wrong and need to be launched, then does so
     void launchCheck()
     {
         if(firstNote == true)
@@ -250,12 +251,9 @@ public class NoteLogic : MonoBehaviour
                 active = false;
             }
         }
-        else
-        {
-            
-        }
     }
-        
+    
+    //This destroys notes once they're out of bounds
     void OnCollisionEnter2D(Collision2D noteCollide)
     {
         if (noteCollide.gameObject.name == "OutOfBounds_Down")
@@ -268,6 +266,7 @@ public class NoteLogic : MonoBehaviour
         }
     }
 
+    //This determines a notes value, based on distance from the action bar
     void valueCalculation()
     {
         noteValue = (12-(Vector2.Distance(transform.localPosition, actionBar.transform.localPosition)))*100;

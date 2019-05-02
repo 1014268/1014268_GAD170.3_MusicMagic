@@ -18,9 +18,9 @@ public class GameLogic : MonoBehaviour
     public Text currentScore;
     public TextSpawn textSpawn;
     public Text currentProgress;
-    public Text finalScore;
+    public static int finalScore;
     
-    
+    //This should update the score
     void scoreUpdate()
     {
         if(addScore > 0)
@@ -29,25 +29,28 @@ public class GameLogic : MonoBehaviour
             currentScore.text = ((int)score).ToString();
             addScore = 0;
             textSpawn.spawn = true;
+            PlayerPrefs.SetFloat("highScore", score);
         }
         else if(addScore < 0)
         {
             score += addScore;
             currentScore.text = ((int)score).ToString();
             addScore = 0;
+            PlayerPrefs.SetFloat("highScore", score);
         }
     }
 
+    //This should count how many notes you've clicked correctly
     void progressUpdate()
     {
         currentProgress.text = progress.ToString() + "/20";
     }
 
+    //This should load the end game scene
     void endRound()
     {
         if(progress == 20)
         {
-            finalScore.text = score.ToString();
             SceneManager.LoadScene(2);
         }
     }
@@ -59,7 +62,6 @@ public class GameLogic : MonoBehaviour
         currentScore = GameObject.Find("CurrentScore").GetComponent<Text>();
         currentProgress = GameObject.Find("CurrentProgress").GetComponent<Text>();
         textSpawn = GameObject.Find("TextSpawnPoints").GetComponent<TextSpawn>();
-        finalScore = GameObject.Find("FinalScore").GetComponent<Text>();
         correct = false;
         launch = false;
         progress = 0;
